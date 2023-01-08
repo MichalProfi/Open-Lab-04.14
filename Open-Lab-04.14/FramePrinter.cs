@@ -6,7 +6,23 @@ namespace Open_Lab_04._14
     {
         public void Print(string[] strings)
         {
-            throw new NotImplementedException();
+            int length = 0;
+
+            foreach (var item in strings)
+            {
+                if (length < item.Length)
+                {
+                    length = item.Length;
+                }
+            }
+            string tabs = new string('*', length + 4);
+
+            Console.WriteLine(tabs);
+            foreach (var item in strings)
+            {
+                Console.WriteLine("* " + item.PadRight(length, ' ') + " *");
+            }
+            Console.WriteLine(tabs);
         }
     }
 }
